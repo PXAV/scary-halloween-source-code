@@ -1,0 +1,340 @@
+###################### INTRODUCTION ########################
+# This is the config file of my plugin 'ScaryHalloween'. In this
+# file you can change everything about the plugin from messages,
+# features, display names to integer values.
+# I've divided the config in different paragraphs to make it easier
+# for you to understand the impact of the value you are changing.
+#
+# It took lots of time to develop this plugin. It would be much
+# appreciated if you could check out my social media.
+# There you also get the latest information about my plugins.
+# >> TWITTER: https://twitter.com/OrigPXAV
+# >> INSTAGRAM: https://instagram.com/origpxav
+# >> YOUTUBE: https://www.youtube.com/channel/UCtXSAGTwurKVeEbwEKMlFog
+# >> SPIGOTMC: https://www.spigotmc.org/members/pxav.437777/
+#
+# GENERAL PRODUCT INFO:
+# >> Name: ScaryHalloween
+# >> Version: 1.0
+############################################################
+
+########################## GENERAL ###############################
+# Configure basic and general things of the plugin like the
+# prefix and the affected worlds of the plugin.
+General:
+
+  # The prefix will be displayed in front of every message
+  # which contains the variable %prefix%. Here you can change
+  # what should be displayed.
+  Prefix: "&8[&6Halloween&8]&r"
+
+  # This list represents the worlds which should be affected of
+  # the plugin. Players on other worlds than listed here will be
+  # ignored by the plugin. The same for features, which will not
+  # be activated in other worlds than listed.
+  AffectedWorlds:
+  - world
+  - yourHalloweenEventWorld
+#################################################################
+
+######################### FEATURES ###############################
+# In this paragraph you can enable and disable certain features
+# of the plugin.
+# - To enable a feature: true
+# - To disable a feature: false
+# You can still always use every feature in the ScarePlayer Menu.
+# Here you can only change things which happen automatically.
+Features:
+
+  # Here you can enable/disable that players should
+  # automatically be jump scared with a scary sound
+  # and a pumpkin on their had.
+  RandomPumpkinJumpScares: true
+
+  # Here you can enable/disable that in a certain time interval
+  # a custom amount of bats will spawn near the player.
+  BatAttackEvent: true
+
+  # Here you can enable/disable that players should get
+  # a random, scary sound in a random time interval.
+  ScarySoundEvent: true
+
+  # Here you can enable/disable that players should see
+  # a lightning effect right at their location (they
+  # don't take any damage).
+  FakeLightningEvent: true
+
+  # Here you can enable/disable that ghosts should spawn
+  # near the player. Ghosts are invisible mobs with some
+  # random armor and weapons. Also they are faster than
+  # default mobs and it's more difficult to kill them.
+  SpawnGhostEvent: true
+
+  # Here you can enable/disable that players should get boosted
+  # into the air and fall down again. The plugin disables
+  # damage for this fall.
+  AirBoostEvent: true
+
+  # Here you can enable/disable that a flying Jack'o'Lantern
+  # should spawn near the player in a random time interval.
+  FlyingJackEvent: true
+
+  # Here you can enable/disable that the plugin should modify
+  # creatures that have spawned on the affected worlds. This means
+  # for example pumpkins on their heads, better weapons or sometimes
+  # the plugin will even spawn a ghost.
+  ModifyCreatureSpawning: true
+
+  # Here you can enable/disable that ghost should be spawned by the
+  # creature modifier or if the modifier should only spawn normal
+  # zombies with pumpkins on their head.
+  SpawnGhosts: true
+
+  # Here you can enable/disable jump scares
+  AutomaticPlayerJumpScare: true
+
+  # Here you can enable/disable that a Zombie will spawn at the player's
+  # location when a player dies.
+  ZombieOnPlayerDeath: true
+
+  # Here you can enable/disable an effect which is played
+  # when a player right clicks a pumpkin.
+  PumpkinClickEffect: true
+
+  # Here you can enable/disable that torches should be flickering when they
+  # are placed, until they give a constant light.
+  # -- this feature is currently unsupported by the plugin, but will be added soon --
+  LagTorchEffect: true
+##################################################################
+
+Settings:
+  PlayersCanBreakEventPumpkins: false
+  LightningPumpkinDistance: 6.0
+  BatAttackSpawnAmount: 5
+
+
+###################### EVENT DELAYS ##########################
+# This paragraph handles the delay between the different
+# events. The numbers in the list mean the different
+# delays in seconds (randomly picked by the plugin). So for
+# example when the system randomly picks the number 620 from the list it will
+# take 620 seconds until the next time the event occurs.
+#
+# You will be able to start events manually with the /halloween startEvent command.
+#
+# For a further description of the events take a look at the descriptions
+# in the 'Features' paragraph.
+#
+EventDelays:
+
+  # The JumpScare delay describes how long
+  # it should take until the next jump scare happens.
+  JumpScareDelays:
+  - 1800
+  - 600
+  - 2570
+  - 222
+  - 793
+  - 2800
+
+  # Delay for the BatAttackEvent.
+  BatAttackDelays:
+  - 4570
+  - 387
+  - 2533
+  - 1029
+  - 567
+  - 3280
+
+  # Delay for the scary sound event.
+  ScarySoundDelays:
+  - 566
+  - 1847
+  - 297
+  - 888
+  - 3400
+
+  # Delay for the fake lightning effect.
+  FakeLightningDelays:
+    - 2386
+    - 1345
+    - 973
+    - 1092
+    - 3678
+    - 808
+
+  # Delay for the ghost spawns.
+  SpawnGhostDelays:
+      - 3180
+      - 9475
+      - 987
+      - 1337
+      - 42
+
+  # Delay for the AirBoostEvent
+  AirBoostDelays:
+      - 2284
+      - 9865
+      - 1873
+      - 4591
+      - 2739
+
+  # Delay for the FlyingJackEvent.
+  FlyingJackDelays:
+      - 4275
+      - 933
+      - 999
+      - 1476
+      - 2457
+      - 1098
+
+##############################################################
+
+##################### PERMISSIONS ######################
+# In this plugin you can also change the permissions
+# of certain actions and commands. You can change them
+# if they are not compatible with other plugins on your
+# server or if you just don't like the format.
+Permissions:
+
+  # This is the permission to execute the halloween
+  # command anc scare players.
+  HalloweenCommand: "halloween.command"
+
+  # This permission allows players to break custom pumpkins which is
+  # disabled by default.
+  BreakPumpkins: "halloween.pumpkins.break"
+########################################################
+
+######################## DISPLAYS #########################
+# The displays control the display names of the items in user
+# interfaces or the lores of the items.
+Displays:
+  JumpScarePumpkinName: "&6&lThe scary pumpkin"
+  JumpScarePumpkinLore:
+  - '&8&m-------------------'
+  - '&7Hast du dich erschrocken?'
+  - '&7Denn das ist mein Ziel!'
+  - '&8&m-------------------'
+
+  # The name above zombies which spawn on death of a player
+  # as far this feature is enabled in the config.
+  DeathZombieName: "&8[&c&lTOT&8] &7%player%"
+
+  # This is the name of bats which is displayed above them
+  # as far as enabled in the 'Features' paragraph.
+  AttackBatName: "&8< &c&lDEIN TOD &8>"
+
+  ScareInventory:
+
+    # please choose a maximum length of 32 chars
+    Title: "&6&lErschrecke &r&6einen Spieler"
+    JumpScare: "&8> &6&lJumpScare &8| &eTon + Kuerbis"
+    PlaySound: "&8> &6&lSound abspielen"
+    BatAttack: "&8> &6&lFledermaeuse"
+    Lightning: "&8> &6&lBlitzeffekt"
+    SpawnGhost: "&8> &6&lGeist Spawnen"
+    ScaryFlight: "&8> &6&lBoost in die Luft"
+    TrickOrTreatChest: "&8> &6&lSueßes oder Saures?"
+    FlyingJack: "&8> &6&lFliegene Laterne"
+    PlayerGrave: "&8> &6&lDas Grab eines Spielers"
+    NotAvailable: "&8> &c&lNicht verfuegbar"
+
+  PumpkinInventory:
+
+    # please choose a maximum length of 32 chars
+    Title: "&6&lErstelle &r&6Kuerbisse"
+    JumpScarePumpkin: "&8> &6&lJumpScare &8| &eSudden transform"
+    SmokingPumpkin: "&8> &6&lSmokingPumpkin &8| &eOnly effects"
+    LightningPumpkin: "&8> &6&lBlitz Kuerbis"
+    ClickablePumpkin: "&8> &6&lKlickbarer Kuerbis"
+    GlowingPumpkin: "&8> &6&lLeuchtender Kuerbis"
+
+    Lore:
+      JumpScare:
+      - "&8&m-------------------"
+      - "&7Dieser Kuerbis verursacht einen"
+      - "&7JumpScare beim Spieler. Das wird"
+      - "&7in bestimmten Zeitabstaenden passieren."
+      - "&8&m-------------------"
+      SmokingPumpkin:
+      - "&8&m-------------------"
+      - "&7Streut Rauch um sich"
+      - "&8&m-------------------"
+      LightningPumpkin:
+      - "&8&m-------------------"
+      - "&7Zeigt einen Blitzeffekt an, wenn"
+      - "&7ein Spieler zu nahe kommt."
+      - "&8&m-------------------"
+      ClickablePumpkin:
+      - "&8&m-------------------"
+      - "&7Spielt einen Ton und viele Effekte,"
+      - "&7wenn ein Spieler auf den Kuerbis klickt."
+      - "&8&m-------------------"
+      GlowingPumpkin:
+      - "&8&m-------------------"
+      - "&7Leuchtet und erlischt in"
+      - "&7verschiedenen Intervallen"
+      - "&8&m-------------------"
+###########################################################
+
+###################### TRICK OR TREAT? ######################
+# In this paragraph you can configure the items in the
+# trick or treat chests for players.
+#
+# Currently the plugin cannot recognize item IDs so you need to use
+# the full names of the items. Valid names can be found on this website:
+# All materials: http://docs.codelanx.com/Bukkit/1.8/org/bukkit/Material.html
+#
+# You need to use this format to add items to the chest,
+# because others cannot be read from the plugin.
+# Item format: MATERIAL:subID:minAmount:maxAmount
+TrickOrTreat:
+
+  # Here is the list with the possible items of the chest
+  # including a sub id and the amount of the items.
+  Items:
+  - EMERALD:0:1:7
+  - DIAMOND:0:1:7
+  - GOLD_INGOT:0:1:7
+  - IRON_INGOT:0:1:7
+  - COOKIE:0:4:26
+  - CAKE:0:1:7
+  - GOLDEN_APPLE:0:1:7
+  - GOLDEN_CARROT:0:1:7
+  - LAPIS_BLOCK:0:1:7
+
+  # How many items should be picked from the list and
+  # be inserted into the chest inventory?
+  PickAmount: 3
+#############################################################
+
+######################### MESSAGES #########################
+# Here you can configure the messages of the plugin.
+Messages:
+  Info:
+    PlacedPumpkin: "%prefix% &eDu hast einen Kuerbis vom Typ &6%type%&e platziert."
+    BrokePumpkin: "%prefix% &eDu hast einen Kuerbis vom Typ &6%type%&e entfernt."
+  Scares:
+    # Here you can disable/enable if the player should get a warning
+    # message when a ghost spawned near to him.
+    WarnPlayerWhenGhostSpawned: true
+    WarnGhostMessage: "%prefix% &eAchtung! Ein &6Geist &eist in deiner Naehe gespawnt."
+    ForcedEvent: "%prefix% &eDas Event wird in &6%time% &eSekunden gestartet."
+    ScaredPlayer: "%prefix% &eSpieler &6%player% &ewurde erschreckt."
+  Errors:
+    NoPermission: "%prefix% &cDazu hast du keine Rechte."
+    NoPlayer: "%prefix% &cDazu musst du ein Spieler sein."
+    WorldNotFound: "%prefix% &cDie Welt &7%world%&e existiert nicht."
+    NoValidWorlds: "%prefix% &8[&cWARNUNG&8] &eKeine verfuegbaren Welten gefunden. Bitte stelle welche in der &6config.yml &eein."
+    NoRealNumber: "%prefix% &cEingabe &7%input% &cist keine gueltige Zahl."
+    PlayerNotOnline: "%prefix% &cDieser Spieler ist nicht online!"
+    PleaseWait: "%prefix% &cBitte warte, bis du diese Funktion wieder benutzen kannst."
+    CannotBreakBlock: "%prefix% &cDu kannst diesen Block nicht abbauen!"
+    UnknownLaunchFailure: "%prefix% &cEin unbekannter Fehler trat beim Ausfuehren dieses Befehls auf."
+    NoSpaceLaunchFailure: "%prefix% &cEs gibt nicht genuegend Platz fuer dieses Event."
+    FeatureUnavailable: "%prefix% &cDiese Funktion ist derzeit nicht verfuegbar."
+    PlayerNotInWorld: "%prefix% &cDer Spieler ist in einer nicht betroffenen Welt."
+    CannotPlaceHere: "%prefix% &cDu kannst den Kuerbis nicht in dieser Welt platzieren."
+############################################################
+

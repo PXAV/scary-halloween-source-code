@@ -1,0 +1,7 @@
+name: ScaryHalloween
+version: 1.0
+author: PXAV
+main: de.pxav.halloween.Halloween
+commands:
+  halloween:
+    description: The basic / main command of the plugin.
