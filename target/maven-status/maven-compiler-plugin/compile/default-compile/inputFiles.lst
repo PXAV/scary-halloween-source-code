@@ -28,6 +28,7 @@ C:\Users\raphael\IdeaProjects\SpigotMC.org - HalloweenEventPlugin\src\main\java\
 C:\Users\raphael\IdeaProjects\SpigotMC.org - HalloweenEventPlugin\src\main\java\de\pxav\halloween\events\ScarySoundEvent.java
 C:\Users\raphael\IdeaProjects\SpigotMC.org - HalloweenEventPlugin\src\main\java\de\pxav\halloween\listener\PlayerDeathListener.java
 C:\Users\raphael\IdeaProjects\SpigotMC.org - HalloweenEventPlugin\src\main\java\de\pxav\halloween\listener\BlockBreakListener.java
+C:\Users\raphael\IdeaProjects\SpigotMC.org - HalloweenEventPlugin\src\main\java\de\pxav\halloween\listener\PlayerCommandPreProcessListener.java
 C:\Users\raphael\IdeaProjects\SpigotMC.org - HalloweenEventPlugin\src\main\java\de\pxav\halloween\events\AirBoostEvent.java
 C:\Users\raphael\IdeaProjects\SpigotMC.org - HalloweenEventPlugin\src\main\java\de\pxav\halloween\listener\PlayerInteractListener.java
 C:\Users\raphael\IdeaProjects\SpigotMC.org - HalloweenEventPlugin\src\main\java\de\pxav\halloween\items\PumpkinPlaceInventory.java

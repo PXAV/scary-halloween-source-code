@@ -83,6 +83,8 @@ public class SettingsHandler {
     private final List<Integer> airBoostDelays = new ArrayList<>();
     private final List<Integer> flyingJackDelays = new ArrayList<>();
 
+    private final List<String> commandAliases = new ArrayList<>();
+
     private final List<ItemStack> chestItems = new ArrayList<>();
     private int pickAmount;
 
@@ -127,6 +129,8 @@ public class SettingsHandler {
 
 
         setPrefix(ChatColor.translateAlternateColorCodes('&', configuration.getString("General.Prefix")));
+
+        this.getCommandAliases().addAll(configuration.getStringList("General.CommandAliases"));
 
         setRandomPumpkinJumpScares(configuration.getBoolean("Features.RandomPumpkinJumpScares"));
         setModifyCreatureSpawn(configuration.getBoolean("Features.ModifyCreatureSpawning"));
@@ -921,5 +925,9 @@ public class SettingsHandler {
 
     public List<String> getInvalidWorlds() {
         return invalidWorlds;
+    }
+
+    public List<String> getCommandAliases() {
+        return commandAliases;
     }
 }

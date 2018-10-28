@@ -154,6 +154,7 @@ public class Halloween extends JavaPlugin {
         pluginManager.registerEvents(new PlayerJoinListener(), this);
         pluginManager.registerEvents(new EntityDeathListener(), this);
         pluginManager.registerEvents(new PlayerEntityInteractListener(), this);
+        pluginManager.registerEvents(new PlayerCommandPreProcessListener(), this);
     }
 
     private void registerCommands() {

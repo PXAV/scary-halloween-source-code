@@ -28,6 +28,13 @@ General:
   # what should be displayed.
   Prefix: "&8[&6Halloween&8]&r"
 
+  # Here you can configure more command aliases. If you type these
+  # in the chat the same as the /halloween command will be executed.
+  CommandAliases:
+  - halloweenevent
+  - halloweenplugin
+  - hw
+
   # This list represents the worlds which should be affected of
   # the plugin. Players on other worlds than listed here will be
   # ignored by the plugin. The same for features, which will not

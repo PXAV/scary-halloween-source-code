@@ -22,6 +22,8 @@ public class EntityDeathListener implements Listener {
         // check if a bat died.
         final Entity entity = event.getEntity();
         if(entity.getType() == EntityType.BAT) {
+            if(entity.getPassenger() == null)
+                return;
             // if it had a passenger (the flying jack is meant here) remove it.
             if(entity.getPassenger().getType() == EntityType.ARMOR_STAND) {
                 entity.getPassenger().remove();

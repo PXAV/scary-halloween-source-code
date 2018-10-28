@@ -33,4 +33,5 @@ de\pxav\halloween\listener\BlockPlaceListener.class
 de\pxav\halloween\events\manual\TrickOrTreatEvent.class
 de\pxav\halloween\listener\BlockBreakListener.class
 de\pxav\halloween\listener\PlayerJoinListener.class
+de\pxav\halloween\listener\PlayerCommandPreProcessListener.class
 de\pxav\halloween\pumpkins\PumpkinDistanceScheduler.class
