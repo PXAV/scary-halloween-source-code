@@ -38,7 +38,7 @@ public class SettingsHandler {
     private String ghostSpawnedNearWarning, deathZombieName, attackBatName,
                     scaredPlayer, placedPumpkin, cannotBreakBlock, removedPumpkin,
                     breakPumpkinPermission, unknownFailure, noSpaceFailure,
-                    featureUnavailable, playerNotInWorld, cannotPlaceHere;
+                    featureUnavailable, playerNotInWorld, cannotPlaceHere, chestUnlucky;
     private final List<String> affectedWorlds = new ArrayList<>();
     private final List<String> invalidWorlds = new ArrayList<>();
     private final List<String> jumpScarePumpkinLore = new ArrayList<>();
@@ -47,7 +47,8 @@ public class SettingsHandler {
     private boolean spawnGhosts, warnPlayerWhenGhostSpawned,
             zombieOnPlayerDeath, scarySoundEvent, pumpkinClickEffect,
             fakeLightningEvent, spawnGhostEvent, airBoostEvent,
-            flyingJackEvent, playersCanBreakEventPumpkin, lagTorch;
+            flyingJackEvent, playersCanBreakEventPumpkin, lagTorch,
+            explodeChests;
     private int batAttackSpawnAmount;
 
     private String scareInventoryTitle;
@@ -144,6 +145,7 @@ public class SettingsHandler {
         setAirBoostEvent(configuration.getBoolean("Features.AirBoostEvent"));
         setFlyingJackEvent(configuration.getBoolean("Features.FlyingJackEvent"));
         setLagTorch(configuration.getBoolean("Features.LagTorchEffect"));
+        setExplodeChests(configuration.getBoolean("Settings.AllowChestExplode"));
 
         setBatAttackSpawnAmount(configuration.getInt("Settings.BatAttackSpawnAmount"));
 
@@ -222,6 +224,8 @@ public class SettingsHandler {
                 configuration.getString("Messages.Errors.PlayerNotInWorld").replace("%prefix%", this.getPrefix())));
         setCannotPlaceHere(ChatColor.translateAlternateColorCodes('&',
                 configuration.getString("Messages.Errors.CannotPlaceHere").replace("%prefix%", this.getPrefix())));
+        setChestUnlucky(ChatColor.translateAlternateColorCodes('&',
+                configuration.getString("Messages.Scares.ChestUnlucky").replace("%prefix%", this.getPrefix())));
 
         setPumpkinInventoryTitle(ChatColor.translateAlternateColorCodes('&',
                 configuration.getString("Displays.PumpkinInventory.Title").replace("%prefix%", this.getPrefix())));
@@ -246,12 +250,9 @@ public class SettingsHandler {
                         Material.valueOf(dataArray[0]),
                         Short.parseShort(dataArray[1]))
                         .setAmount(Halloween.getInstance().getMathUtils().getRandom(Integer.valueOf(dataArray[2]),
-                                Integer.valueOf(dataArray[3]))).build()
+                                Integer.valueOf(dataArray[3])) + 1).build()
             );
-            System.out.println("new ItemStack: mat.: " + dataArray[0] + "sub.: " + dataArray[1] + " min.: " + dataArray[2]+ " max.: " + dataArray[3]);
         });
-
-        System.out.println("pick amount: " + pickAmount);
 
         if(chestItems.isEmpty()) {
             Bukkit.getConsoleSender().sendMessage(this.getPrefix() + "§cWARNING: Misconfiguration found in \"§7TrickOrTreat.Items\"§c!");
@@ -929,5 +930,21 @@ public class SettingsHandler {
 
     public List<String> getCommandAliases() {
         return commandAliases;
+    }
+
+    public boolean isExplodeChests() {
+        return explodeChests;
+    }
+
+    public void setExplodeChests(boolean explodeChests) {
+        this.explodeChests = explodeChests;
+    }
+
+    public String getChestUnlucky() {
+        return chestUnlucky;
+    }
+
+    public void setChestUnlucky(String chestUnlucky) {
+        this.chestUnlucky = chestUnlucky;
     }
 }

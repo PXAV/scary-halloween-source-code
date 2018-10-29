@@ -166,7 +166,9 @@ public class HalloweenCommand implements CommandExecutor {
                     instance.getPumpkinHandler().loadPumpkinFiles();
                     instance.getPumpkinHandler().loadPumpkins();
                     player.sendMessage(settingsHandler.getPrefix() + " §8[§2✔§8] §eSuccessfully reloaded all §6§lpumpkins");
-                    player.sendMessage(settingsHandler.getPrefix() + " §ePlugin reload §6§ldone§r§e!");
+                    player.sendMessage(settingsHandler.getPrefix() + " §ePlugin reload §6§ldone§r§e! If you changed anything");
+                    player.sendMessage(settingsHandler.getPrefix() + " §eabout the §6affected worlds §eit's highly recommended");
+                    player.sendMessage(settingsHandler.getPrefix() + " §eto do execute a real server reload as well.");
                 } else if(args.length == 1 && args[0].equalsIgnoreCase("worlds")) {
                     player.sendMessage(settingsHandler.getPrefix() + " §8§m--------------------------");
                     player.sendMessage(settingsHandler.getPrefix() + " §eAll active worlds");
@@ -184,6 +186,9 @@ public class HalloweenCommand implements CommandExecutor {
                         player.sendMessage(settingsHandler.getPrefix() + " §8» §eAffected from Halloween Events§8: §2✔");
                     else player.sendMessage(settingsHandler.getPrefix() + " §8» §eAffected from Halloween Events§8: §c✖");
                     player.sendMessage(settingsHandler.getPrefix() + " §8§m--------------------------");
+                } else if(args.length == 1 && args[0].equalsIgnoreCase("rmc")) {
+                    Halloween.getInstance().getTrickOrTreatEvent().disable();
+                    player.sendMessage(Halloween.getInstance().getSettingsHandler().getPrefix() + " §eSuccessfully §6removed §eall TrickOrTreat chests.");
                 } else
                     this.sendUsage(player, settingsHandler);
             } else
@@ -200,6 +205,7 @@ public class HalloweenCommand implements CommandExecutor {
         player.sendMessage(settingsHandler.getPrefix() + " §6/halloween events §7Info about events");
         player.sendMessage(settingsHandler.getPrefix() + " §6/halloween startEvent <EventName> §7Start events");
         player.sendMessage(settingsHandler.getPrefix() + " §6/halloween worlds §7See all worlds");
+        player.sendMessage(settingsHandler.getPrefix() + " §6/halloween rmc §7Remove TrickOrTreat chests");
         player.sendMessage(settingsHandler.getPrefix() + " §6/halloween reload §7Reload the plugin");
         player.sendMessage(settingsHandler.getPrefix() + " §7");
         player.sendMessage(settingsHandler.getPrefix() + " §eYou are running §6§lScaryHalloween §eby §6§lPXAV§e.");

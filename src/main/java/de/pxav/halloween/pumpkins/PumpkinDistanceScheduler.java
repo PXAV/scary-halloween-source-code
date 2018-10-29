@@ -47,21 +47,25 @@ public class PumpkinDistanceScheduler {
 
                     // play a lightning effect if the player is in a certain radius of a pumpkin.
                     Halloween.getInstance().getPumpkinHandler().pumpkins.get(PumpkinType.LIGHTNING).forEach(location -> {
-                        if(current.getLocation().distance(location) <= Halloween.getInstance().getSettingsHandler().getLightningPumpkinDistance()) {
-                            Bukkit.getScheduler().scheduleSyncDelayedTask(Halloween.getInstance(), () -> {
-                                current.getWorld().strikeLightningEffect(location);
-                                current.playSound(current.getLocation(), Sound.AMBIENCE_THUNDER, 3, 1);
-                            });
+                        if(current.getWorld().getName().equalsIgnoreCase(location.getWorld().getName())) {
+                            if(current.getLocation().distance(location) <= Halloween.getInstance().getSettingsHandler().getLightningPumpkinDistance()) {
+                                Bukkit.getScheduler().scheduleSyncDelayedTask(Halloween.getInstance(), () -> {
+                                    current.getWorld().strikeLightningEffect(location);
+                                    current.playSound(current.getLocation(), Sound.AMBIENCE_THUNDER, 3, 1);
+                                });
+                            }
                         }
                     });
 
                     // play a smoke effect if the player is in a certain radius of a pumpkin.
                     Halloween.getInstance().getPumpkinHandler().pumpkins.get(PumpkinType.SMOKING).forEach(location -> {
-                        if(current.getLocation().distance(location) < 30) {
-                            Bukkit.getScheduler().scheduleSyncDelayedTask(Halloween.getInstance(), () -> {
-                                current.playEffect(location, Effect.PARTICLE_SMOKE, 1);
-                                current.playEffect(location.add(0, 1, 0), Effect.LARGE_SMOKE, 1);
-                            });
+                        if(current.getWorld().getName().equalsIgnoreCase(location.getWorld().getName())) {
+                            if(current.getLocation().distance(location) < 30) {
+                                Bukkit.getScheduler().scheduleSyncDelayedTask(Halloween.getInstance(), () -> {
+                                    current.playEffect(location, Effect.PARTICLE_SMOKE, 1);
+                                    current.playEffect(location.add(0, 1, 0), Effect.LARGE_SMOKE, 1);
+                                });
+                            }
                         }
                     });
 

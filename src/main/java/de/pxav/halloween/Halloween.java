@@ -49,6 +49,7 @@ public class Halloween extends JavaPlugin {
     private final PumpkinDistanceScheduler pumpkinDistanceScheduler = new PumpkinDistanceScheduler();
     private final PumpkinLauncherScheduler pumpkinLauncherScheduler = new PumpkinLauncherScheduler();
     private final TrickOrTreatEvent trickOrTreatEvent = new TrickOrTreatEvent();
+    private final LocationString locationString = new LocationString();
 
     /**
      * This method is executed by the server when the server
@@ -128,6 +129,9 @@ public class Halloween extends JavaPlugin {
     @Override
     public void onDisable() {
         setInstance(null);
+
+        // disable events
+        this.getTrickOrTreatEvent().disable();
 
         // stop event schedulers
         this.getJumpScareEvent().stopScheduler();
@@ -231,5 +235,9 @@ public class Halloween extends JavaPlugin {
 
     public TrickOrTreatEvent getTrickOrTreatEvent() {
         return trickOrTreatEvent;
+    }
+
+    public LocationString getLocationString() {
+        return locationString;
     }
 }

@@ -17,6 +17,7 @@ de\pxav\halloween\configuration\SettingsHandler.class
 de\pxav\halloween\listener\InventoryClickListener.class
 de\pxav\halloween\listener\PlayerEntityInteractListener.class
 de\pxav\halloween\Halloween.class
+de\pxav\halloween\utils\LocationString.class
 de\pxav\halloween\pumpkins\PumpkinLauncherScheduler.class
 de\pxav\halloween\listener\PlayerInteractListener.class
 de\pxav\halloween\items\PumpkinPlaceInventory.class

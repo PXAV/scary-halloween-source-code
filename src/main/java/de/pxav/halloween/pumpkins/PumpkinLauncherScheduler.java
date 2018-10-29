@@ -31,22 +31,26 @@ public class PumpkinLauncherScheduler {
                     if(location.getWorld().getBlockAt(location).getType() == Material.PUMPKIN) {
                         location.getWorld().getBlockAt(location).setType(Material.JACK_O_LANTERN);
                         Bukkit.getOnlinePlayers().forEach(current -> {
-                            if(current.getLocation().distance(location) < 13.0D)
-                                current.playSound(current.getLocation(), Sound.FIRE_IGNITE, 3, 1);
-                            for (int i = 0; i < 3; i++)
-                                current.playEffect(location, Effect.LAVA_POP, 1);
-                            for (int i = 0; i < 3; i++)
-                                current.playEffect(location, Effect.FIREWORKS_SPARK, 1);
-                            for (int i = 0; i < 3; i++)
-                                current.playEffect(location, Effect.COLOURED_DUST, 1);
+                            if(current.getWorld().getName().equalsIgnoreCase(location.getWorld().getName())) {
+                                if(current.getLocation().distance(location) < 13.0D)
+                                    current.playSound(current.getLocation(), Sound.FIRE_IGNITE, 3, 1);
+                                for (int i = 0; i < 3; i++)
+                                    current.playEffect(location, Effect.LAVA_POP, 1);
+                                for (int i = 0; i < 3; i++)
+                                    current.playEffect(location, Effect.FIREWORKS_SPARK, 1);
+                                for (int i = 0; i < 3; i++)
+                                    current.playEffect(location, Effect.COLOURED_DUST, 1);
+                            }
                         });
                     } else if(location.getWorld().getBlockAt(location).getType() == Material.JACK_O_LANTERN) {
                         location.getWorld().getBlockAt(location).setType(Material.PUMPKIN);
                         Bukkit.getOnlinePlayers().forEach(current -> {
-                            for (int i = 0; i < 3; i++)
-                                current.playEffect(location, Effect.EXTINGUISH, 1);
-                            for (int i = 0; i < 3; i++)
-                                current.playEffect(location, Effect.CLOUD, 1);
+                            if(current.getWorld().getName().equalsIgnoreCase(location.getWorld().getName())) {
+                                for (int i = 0; i < 3; i++)
+                                    current.playEffect(location, Effect.EXTINGUISH, 1);
+                                for (int i = 0; i < 3; i++)
+                                    current.playEffect(location, Effect.CLOUD, 1);
+                            }
                         });
                     }
                 }

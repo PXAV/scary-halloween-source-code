@@ -119,6 +119,10 @@ Settings:
   LightningPumpkinDistance: 6.0
   BatAttackSpawnAmount: 5
 
+  # Should TrickOrTreat chests explode if the player
+  # is unlucky or just disappear with a message?
+  AllowChestExplode: true
+
 
 ###################### EVENT DELAYS ##########################
 # This paragraph handles the delay between the different
@@ -329,6 +333,7 @@ Messages:
     WarnGhostMessage: "%prefix% &eBe aware! A &6ghost &espawned near to you!"
     ForcedEvent: "%prefix% &eThe event will start in &6%time% &eseconds."
     ScaredPlayer: "%prefix% &ePlayer &6%player% &ewas successfully scared."
+    ChestUnlucky: "%prefix% &eToday it seems not to be your lucky day. Nevertheless: &6&lHAPPY HALLOWEEN&e!"
   Errors:
     NoPermission: "%prefix% &cYou don't have permissions for that."
     NoPlayer: "%prefix% &cYou need to be a player for that."
